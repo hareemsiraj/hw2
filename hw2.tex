@@ -35,15 +35,16 @@
   \begin{parts}
   \part[5] $\neg(p \lor q) \equiv \neg p \land \neg q $.
     \begin{solution}
+    CONCLUSION: The statement is true for all values. Hence, the statement is proved as true.
       % Part of the table is given here for your convenience.
       \[
         \begin{array}{c|c|*{6}{|c}}
           p & q & p \lor q & \neg(p \lor q) & \neg p & \neg q & \neg p \land \neg q & (\neg(p \lor q)) \iff (\neg p \land \neg q)\\
           \hline
-          F & F &  &  &  &  &  &  \\
-          F & T &  &  &  &  &  &  \\
-          T & F &  &  &  &  &  &  \\
-          T & T &  &  &  &  &  &  
+          F & F & F & T & T & T & T & T \\
+          F & T & T & F & T & F & F & T \\
+          T & F & T & F & F & T & F & T \\
+          T & T & T & F & F & F & F & T 
         \end{array}
       \]
       
@@ -64,14 +65,14 @@
         \begin{array}{*{3}{c|}*{8}{|c}}
           p & q & r & \lnot p & \lnot q & \lnot r & p \lor q & \lnot p \land \lnot q & A & B & A \iff B\\
           \hline
-          F & F &  &  &  &  &  &  &  &  &  \\
-          F & F &  &  &  &  &  &  &  &  &  \\
-          F & T &  &  &  &  &  &  &  &  &  \\
-          F & T &  &  &  &  &  &  &  &  &  \\
-          T & F &  &  &  &  &  &  &  &  &  \\
-          T & F &  &  &  &  &  &  &  &  &  \\
-          T & T &  &  &  &  &  &  &  &  &  \\
-          T & T &  &  &  &  &  &  &  &  &  
+          F & F & F &  T&  T& T & F &  T& T & T & T \\
+          F & F &  T&  T&  T& F & F &  T& T & F &  F\\
+          F & T &  F&  T&  F& T & T &  F& T & F &  F\\
+          F & T &  T&  T&  F& F & T &  F& F & F &  T\\
+          T & F &  F&  F&  T& T & T &  F& T & F &  F\\
+          T & F &  T&  F&  T& F & T &  F& F & F &  T\\
+          T & T &  F&  F&  F& T & T &  F& T & F &  F\\
+          T & T &  T&  F&  F& F & T &  F& F & F & T 
         \end{array}
       \]
     \end{solution}
@@ -83,16 +84,20 @@
   \part[5] Identify three simple propositions, $p, q, \text{ and } r$, needed for the representation and write out the corresponding expression that uses them to represent the given sentence.
     \begin{solution}
       % Enter your solution here.
+      p = Popular
+      \\q = cool
+      \\r = funny
+     $ \\p \implies (q \vee r) $
     \end{solution}
-  \part[5] For your expression identified above, write the converse, contrapositive, and inverse in propositional logic as well as complete English sentences.
+ \part[5] For your expression identified above, write the converse, contrapositive, and inverse in propositional logic as well as complete English sentences.
     \begin{solution}
       
       % Part of the table is given here for your convenience.
       \begin{tabularx}{\textwidth}{l|l|X}
         & Logical Notation & English sentence \\\hline\hline
-        Converse &   & \\\hline
-        Contrapositive &  & \\\hline
-        Inverse &  &  
+        Converse & $(q \lor r) \implies p$ & A person is cool or funny only if they are popular \\\hline
+        Contrapositive & $\lnot(q \lor r) \implies \lnot p$ & A person is not cool or  not funny only if they are not popular \\\hline
+        Inverse & $\lnot p \implies \lnot(p \lor q)$ & A person is not popular only if they are not cool or not funny 
       \end{tabularx}
 
     \end{solution}
@@ -111,6 +116,7 @@
   \part[5] Using the propositions above, express the order as a compound proposition in logical notation.
     \begin{solution}
       % Enter your solution here.
+     $blue \wedge green \wedge copper \wedge matte $
     \end{solution}
   \part[5] Determine which constraints are satisfied and which are violated for the order, and provide an explanation.
   \begin{solution}
@@ -118,14 +124,13 @@
     % Part of the table is given here for your convenience.
     \begin{tabularx}{\textwidth}{l|l|X}
       Constraint & Satisfied & Explanation \\\hline\hline
-      aluminum $\lor$ copper $\lor$ iron & & \\
-      aluminum $\implies$ grey &  &  \\\hline
-      copper $\land$ $\neg$ coated $\implies$ red &  &  \\\hline
-      coated $\land$ $\neg$ copper $\implies$ green &  &  \\\hline
-      green $\lor$ blue $\iff \neg$ textured $\land$ $\neg$ iron &  & 
+      aluminum $\lor$ copper $\lor$ iron & Yes& Since It is a copper, this is satisfied with Copper being true\\
+      aluminum $\implies$ grey & Yes & Since it is not aluminum or grey. Both of these are False and the implication is satisfied \\\hline
+      copper $\land$ $\neg$ coated $\implies$ red & No & not satisfied since it is copper and not coated but it is not red. The consequent becomes false whilst the antecedent is true. \\\hline
+      coated $\land$ $\neg$ copper $\implies$ green & Yes & It is not coated and it is copper, thus both are false whilst it is green making the consequent true with the antecedent false. Thus satisfied \\\hline
+      green $\lor$ blue $\iff \neg$ textured $\land$ $\neg$ iron & Yes & both sides are true making the bi conditional satisfied,
     \end{tabularx}
   \end{solution}
-
 \end{parts}
 
 
@@ -139,10 +144,10 @@
       % Part of the table is given here for your convenience.
     \begin{tabularx}{\textwidth}{c|c|X}
       Card & Turned & Explanation \\\hline\hline
-      $A$ &  & \\\hline
-      $5$ &  & \\\hline
-      $2$ &  & \\\hline
-      $J$ &  & 
+      $A$ & No & We are not concerned with the letter A \\\hline
+      $5$ & Yes & Using the modus ponens argument, we can conclude if the statement is true or false. \\\hline
+      $2$ & No & We are not concerned with the number 2\\\hline
+      $J$ & Yes & Using the modus tollens argument, we can infer if the statement is true or false
     \end{tabularx}
     
   \end{solution}
@@ -155,16 +160,16 @@
       % Part of the structure is given here for your convenience.
       The simple propositions are as follows.\\
       \begin{tabularx}{\textwidth}{l@{ : }X}
-        $p$ & \\ % state the atomic proposition
-        $q$ & % state the atomic proposition
+        $p$ & I am wealthy \\% state the atomic proposition
+        $q$ & I am happy % state the atomic proposition
       \end{tabularx}
 
       The argument is
       \[
         \begin{array}{l}
-          \text{enter the premise in logical notation}\\
-          \text{enter the premise in logical notation}\\\hline
-          \text{enter the conclusion in logical notation}\\
+          \text{ $ p \implies q $ }\\
+          \text{q}\\\hline
+          \text{ p}\\
         \end{array}
       \]
     \end{solution}
@@ -172,10 +177,33 @@
     If Ahmed drives his car, he is at least 18 years old. Ahmed does not drive a car. Therefore, Ahmed is not yet 18 years old. 
     \begin{solution}
       % Enter your solution here.
+      p: Ahmed drives his car
+      \\ q: Ahmed is atleast 18 years old
+      \\ The argument is
+      \[
+        \begin{array}{l}
+          \text{ $ p \implies q $ }\\
+          \text{$\neg p$}\\\hline
+          \text{$ \neg q$}\\
+        \end{array}
+      \]
+      
     \end{solution}
   \part[5] If I study, then I will not fail CS 113. If I do not play cards too often, then I will study. I failed CS 113. Therefore, I played cards too often.
     \begin{solution}
       % Enter your solution here.
+      p: I study
+      \\q: I will not fail CS 113
+      \\r: I do not play cards too often
+       \\ The argument is
+      \[
+        \begin{array}{l}
+          \text{ $ p \implies q $ }\\
+          \text{$r \implies p$}\\
+          \text{$ \neg q$}\\\hline
+          \text{$\neg r$}
+        \end{array}
+      \]
     \end{solution}
   \end{parts}
 
@@ -194,6 +222,38 @@
   Identify the relevant simple propositions to model the above in propositional logic. Represent the above situation using propositional logic and describe the steps needed to infer the location of the manual.
   \begin{solution}
     % Enter your solution here.
+    p: hint is at learn courtyard
+    \\ q: hint is at the gym
+    \\ r: TA in ehsas
+    \\ s: TA absent
+    \\ t:There are people in learn courtyard
+    \\ u: manual at zen garden
+    \\ v: manual at earth courtyard
+    \\ w: manual at fire courtyard
+    \\
+  $  \\ p \vee  q
+\\ r\vee s \implies p
+\\\neg r \implies q
+\\ t \implies \neg p
+\\ p \implies u
+\\ q \implies v
+\\ s \implies w
+$
+\\
+\\we know that t $\implies \neg p$
+\\ by disjunctive syllogism
+\\ 
+\[
+        \begin{array}{l}
+          \text{ $ p \vee q $ }\\
+          \text{$\neg p$}\\\hline
+          \text{$ q$}\\
+        \end{array}
+      \]
+\\ thus the hint is at the gym
+\\ since $q \implies v$ 
+\\ the manual is at the earth courtyard
+
   \end{solution}
 
 \question[5] A TV channel is reporting a terrorist attack on a shopping mega-mall. The mega-mall website claims that the mall closes only in case of an attack. It is known that a sale is on whenever the mega-mall is open, and that many people come when there is a sale. A crime expert explained that in case of an attack, neighbors end up hearing firing sounds and calls are made to the local police. Phone logs indicate no recent calls to the police.
@@ -201,10 +261,25 @@
     \part[5] We are not sure about the TV report, but we trust all the other sources. Is the mega-mall open?
   \begin{solution}
     % Enter your solution here.
+    p: A TV channel is reporting an attack
+    \\q: mall closes
+    \\r: there is an attack
+    \\ s: there is a sale
+    \\ t: many people come
+    \\ n: neighbours hear sounds
+    \\ v: calls made to police
+    \\ $q \implies r
+    \\ s \implies \neg q \wedge t
+    \\ r \implies n \wedge u
+    \\
+    \\ \neg u \implies \neg r
+    \\ \neg r$ thus $\neg q$
+    \\ thus mall is open
   \end{solution}
     \part[5] Is the TV report true?
   \begin{solution}
     % Enter your solution here.
+    No it is not true since the mall is open
   \end{solution}
   \end{parts}
   
@@ -214,6 +289,7 @@
   \begin{parts}
   \part[5] There is a third quantifier often used in predicate logic called the \textit{Uniqueness Quantifier}, $\exists!x\; P(x)$ which is read as, ``$P(x)$ is true for one and only one $x$ in the domain'', or ``there is a \textit{unique} $x$ such that $P(x)$''. Give an example of a propositional function $P(x)$ and a corresponding domain, such that $\exists!x\; P(x)$ is a true proposition.
     \begin{solution}
+    let p(x) denote 2 + x = 0 where x is an integer. Then $\exists!x\; P(x)$ is a true proposition.
       % Enter your solution here.
     \end{solution}
     
@@ -223,12 +299,17 @@
     \end{align}
     Express the proposition on the right above in English and explain why it is equivalent to the left hand side, i.e. to the uniquely quantified propositional function. You may explain in words; a formal proof is not yet required.
     \begin{solution}
+    There exist an x such that if P(x) is true and all y satisfies P(y), then y and x are equal
+    \\ Above statement is equivalent to $ \exists!x\;  P(x) $ because it suggests that there exist only one value of x that makes the statement true. This is in accordance with the definition of uniqueness quantifier which states that P(x) is true for only one domain.
       % Enter your solution here.
     \end{solution}
     
   \part[5] Express $\neg \exists!xP\; (x)$ in a similar way as (\ref{eq:uniq}). Provide an expression in formal notation as well as in English. Also, give an example of a true proposition $\neg\exists!x\; P(x)$ by slightly changing the one you gave in part (a).
     \begin{solution}
       % Enter your solution here.
+       1) for all x, P(x) is false and there exist a y such that P(y) is False, then y is not equal to x
+       \\ 2)$ \forall x(\lnot P(x) \vee \exists ( P(y) \land y \neq x)) $
+       \\ 3) let P(x) denote $2 + x > 0 $where x is an integer.Then$ \neg \exists!x P\; (x)$ is a true proposition.
     \end{solution}
   \end{parts}
 
@@ -245,23 +326,44 @@
   \part[5] No one can have Pakistani and Indian citizenship.
     \begin{solution}
       % Enter your solution here.
+      P(x) = x has pakistani citizenship
+      \\ Q(x) = x has indian citizenship
+      \\1) $P(x) \oplus Q(x)$
+      \\2) $\exists x \in P(x) \wedge Q(x)$
+      \\3) Someone has a Pakistani and Indian citizenship
     \end{solution}
 
   \part[5] If everyone does their homework and goes to the recitations, no one will be badly prepared for the exams.
     \begin{solution}
       % Enter your solution here.
+      P(x) = x does their homework
+      \\ Q(x) = x goes to the recitations
+      \\ R(x) = x is prepared well for the exams
+     \\ 1) $ \forall x (P(x) \wedge Q(x)) \implies R(x)$
+     \\2) $\exists x \in \neg (P(x) \wedge Q(x)) \implies \neg R(x)$
+     \\3) If someone does not do their recitation and does not go to the recitation, then they will be badly prepared for the exams.
     \end{solution}
 
 
   \part[5] No student has solved at least one exercise in every section of the book.
     \begin{solution}
       % Enter your solution here.
+       P(x) = x student has solved at least one exercise
+      \\ Q(x) = every section of the book
+     \\ 1) $ \forall x \notin (P(x) \in Q(x))$
+     \\2) $\exists x \in (P(x) \in Q(x) $ 
+     \\3) There are some students that have solved at least one exercise in every section of the book
+      
     \end{solution}
 
     
   \part[5] No one has climbed every mountain in Pakistan.
     \begin{solution}
       % Enter your solution here.
+       P(x) = climbed every mountain in Pakistan
+     \\ 1) $ \forall x \in \neg  $
+     \\2) $\exists x \in (P(x) $ 
+     \\3) There exists someone that has climbed every mountain in Pakistan
     \end{solution}
   \end{parts}
 
@@ -277,11 +379,14 @@
   \part[5] $\exists p\; (F(p) \land B(p)) \rightarrow \exists j\; L(j)$
     \begin{solution}
       % Enter your solution here.
+      There exists a printer such that if the printer is out of service and busy, then some print jobs are lost.
     \end{solution}
     
   \part[5] $(\forall p\; B(p) \land \forall j\; Q(j)) \rightarrow \exists j\; L(j)$
     \begin{solution}
       % Enter your solution here.
+      If all printers are busy and all print jobs are queued, then some print jobs are lost.
+      
     \end{solution}
   \end{parts}
 
@@ -290,11 +395,19 @@
   \part[5] At least one mail message can be saved if there is a disk with more than 10KB of free space.
     \begin{solution}
       % Enter your solution here.
+      F(x) : x is one mail message
+      \\ G(x) : x can be saved
+      \\ H(y) : y is a disk with more than 10 KB of free space
+      \\ $\exists x((F(x) \wedge g(x)) \to H(y))$
     \end{solution}
 
   \part[5] The system mailbox can be accessed by everyone in the group if the file system is locked.
     \begin{solution}
       % Enter your solution here.
+      F(x) : x is a system of mailbox
+      \\ G(x) : x can be accessed
+      \\ H(y) : the file system y is locked
+      \\$ \forall x((F(x) \to G(x)) \to H(y))$
     \end{solution}
   \end{parts}
 
@@ -310,21 +423,34 @@
   \part[5] $\forall x \forall y\; (x^2= y^2 \rightarrow x=y)$
     \begin{solution}
       % Enter your solution here.
+      1) If the square of two integers is equal then the two integers must be equal
+      \\2) FALSE- (2,-2)
+      \\ 3) It is true for positive integers only
+      
     \end{solution}
 
   \part[5] $\forall x \exists y\; (y^2=x)$
     \begin{solution}
       % Enter your solution here.
+      1) Every integer is the square of some integer
+      \\$2) FALSE - (2, \sqrt{2} )$ \\ Where $\sqrt{2}$ is not an integer
+      \\True for every integer that is not a prime number or is not only divisible by prime numbers
     \end{solution}
 
   \part[5] $\exists x \forall y\; (x \leq y^2)$
     \begin{solution}
       % Enter your solution here.
+      1)The square of an integer is greater than or equal to the integer
+      \\2) TRUE
+      \\3) Taking domain as R+ then such a number does not exist
     \end{solution}
 
   \part[5] $\forall x \forall y\ \exists z\; (x-z=y)$
     \begin{solution}
       % Enter your solution here.
+      1) For all integers there exists an integer such that the difference between them is an integer
+      \\2) TRUE
+      \\3) False for Z+ . For (x,y) : (9,13), z would be -4 which is not a positive number thus not in the domain
     \end{solution}
   \end{parts}
   
@@ -336,4 +462,5 @@
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
+%%% End:
 %%% End:
